@@ -1,3 +1,4 @@
+import os
 import wave
 import openai
 from whisperStuff import getTextFromAudio
@@ -7,8 +8,7 @@ import pyaudio
 import keyboard
 
 
-API_KEY = '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'
-openai.api_key = API_KEY
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 CHUNK = 1024
 FORMAT = pyaudio.paInt16
